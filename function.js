@@ -20,7 +20,10 @@ window.function = function (time, fweight, align, fsize, width, height) {
   <body>
    <!-- Display the countdown timer in an element -->
 <p id="demo"></p>
-<audio id="timeout_audio"></audio>
+<audio id="timeout_audio">
+  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/41203/beep.mp3"/>
+  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/41203/beep.ogg" />
+</audio>
 <style>
 
 #demo {
