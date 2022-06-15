@@ -79,6 +79,7 @@ var x = setInterval(function() {
     clearInterval(x);
     demo.style.color = "#ff0000";
     document.getElementById("demo").innerHTML = "NEXT MOVEMENT";
+    document.getElementById("timeout_audio").play();
   }
 }, 1000);
 </script>
