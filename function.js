@@ -67,6 +67,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
   var demo = document.getElementById("demo");
+  var timeoutAudio = document.getElementByID("timeout_audio");
 
   // Display the result in the element with id="demo"
   document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s work time";
@@ -75,11 +76,7 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     demo.style.color = "#ff0000";
-    var timeoutAudio = document.getElementByID("timeout_audio");
-    timeoutAduio.src = "http://soundbible.com/grab.php?id=1252&type=mp3";
-    timeoutAudio.load();
     document.getElementById("demo").innerHTML = "NEXT MOVEMENT";
-    timeoutAudio.play();
   }
 }, 1000);
 </script>
