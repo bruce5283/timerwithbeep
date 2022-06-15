@@ -76,10 +76,10 @@ var x = setInterval(function() {
 
   // If the count down is finished, write some text
   if (distance < 0) {
+    document.getElementById("timeout_audio").play();
     clearInterval(x);
     demo.style.color = "#ff0000";
     document.getElementById("demo").innerHTML = "NEXT MOVEMENT";
-    document.getElementById("timeout_audio").play();
   }
 }, 1000);
 </script>
