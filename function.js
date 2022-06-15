@@ -51,11 +51,6 @@ color: #12A89E;
 // Set the date we're counting down to
 var countDownDate = new Date("${time}").getTime();
 
-var timeoutAudio = document.getElementByID("timeout_audio");
-
-timeoutAduio.src = "http://soundbible.com/grab.php?id=1252&type=mp3";
-timeoutAudio.load();
-
 // Update the count down every 1 second
 var x = setInterval(function() {
 
@@ -80,6 +75,9 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     demo.style.color = "#ff0000";
+    var timeoutAudio = document.getElementByID("timeout_audio");
+    timeoutAduio.src = "http://soundbible.com/grab.php?id=1252&type=mp3";
+    timeoutAudio.load();
     document.getElementById("demo").innerHTML = "NEXT MOVEMENT";
     timeoutAudio.play();
   }
