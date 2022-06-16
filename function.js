@@ -50,29 +50,19 @@ color: #12A89E;
 </style>
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("${time}").getTime();
-var audio = new Audio("https://dl.dropboxusercontent.com/s/1cdwpm3gca9mlo0/kick.mp3);
+var countdown;
+var countdown_number;
+var audio = new Audio('http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3');
 
 function countdown_trigger() {
-  // Get today's date and time
-  var now = new Date().getTime();
-  var countdown_number = countDownDate - now;
     if (countdown_number > 0) {
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        var demo = document.getElementById("demo");
-        // Display the result in the element with id="demo"
-        document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s work time";
+        countdown_number--;
+        document.getElementById('countdown_text').innerHTML = countdown_number;
         if (countdown_number > 0) {
             countdown = setTimeout(countdown_trigger, 1000);
         }
 
         if (countdown_number === 0) {
-            demo.style.color = "#ff0000";
-            document.getElementById("demo").innerHTML = "NEXT MOVEMENT";
             audio.play()
         }
     }
@@ -83,7 +73,7 @@ function countdown_clear() {
 }
 
 function countdown_init() {
-    countdown_number = countDownDate;
+    countdown_number = 11;
     countdown_trigger();
 }
 
