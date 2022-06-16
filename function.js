@@ -19,9 +19,8 @@ window.function = function (time, fweight, align, fsize, width, height) {
   </head>
   <body>
    <!-- Display the countdown timer in an element -->
-<p id="demo"></p>
-<input type="button" value="start countdown" id="start" />
-<input type="button" value="stop countdown" id="stop" />
+<button id="btn">start countdown</button><br>
+<pre id="pre"></pre>
 <style>
 
 #demo {
@@ -50,35 +49,32 @@ color: #12A89E;
 </style>
 <script>
 // Set the date we're counting down to
-var countdown;
-var countdown_number;
-var audio = new Audio('http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3');
+const audio = new Audio("https://dl.dropboxusercontent.com/s/1cdwpm3gca9mlo0/kick.mp3");
+let time = 5;
 
-function countdown_trigger() {
-    if (countdown_number > 0) {
-        countdown_number--;
-        document.getElementById('countdown_text').innerHTML = countdown_number;
-        if (countdown_number > 0) {
-            countdown = setTimeout(countdown_trigger, 1000);
-        }
+btn.onclick = e => {
+  // mark our audio element as approved by the user
+  audio.play().then(() => { // pause directly
+    audio.pause();
+    audio.currentTime = 0;
+  });
+  countdown();
+  btn.disabled = true;
+};
 
-        if (countdown_number === 0) {
-            audio.play()
-        }
-    }
+
+function countdown() {
+  pre.textContent = --time;
+  if(time === 0) return onend();
+  setTimeout(countdown, 1000);
 }
 
-function countdown_clear() {
-    clearTimeout(countdown);
-}
 
-function countdown_init() {
-    countdown_number = 11;
-    countdown_trigger();
+function onend() {
+  audio.play(); // now we're safe to play it
+  time = 5;
+  btn.disabled = false;
 }
-
-document.getElementById('start').onclick = countdown_init;
-document.getElementById('stop').onclick = countdown_clear;
 </script>
   </body>
 </html>`
