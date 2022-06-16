@@ -7,7 +7,7 @@
     {
       "name": "time",
       "displayName": "Ending time",
-      "type": "string"
+      "type": "number"
     },
     {
       "name": "fweight",
