@@ -23,7 +23,7 @@ window.function = function (time, fweight, align, fsize, width, height) {
 <button id="btn">Start Timer</button><br>
 <style>
 
-#pre{
+#pre {
 font-weight: ${fweight};
 text-align: ${align};
 font-family: verdana;
@@ -72,7 +72,7 @@ function countdown() {
 
 function onend() {
   audio.play(); // now we're safe to play it
-  time = 5;
+  time = 30;
   btn.disabled = false;
 }
 </script>
