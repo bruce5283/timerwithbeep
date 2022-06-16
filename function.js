@@ -49,7 +49,7 @@ color: #12A89E;
 </style>
 <script>
 // Set the date we're counting down to
-const audio = new Audio("http://sfxcontent.s3.amazonaws.com/soundfx/SmokeDetectorAlarm.mp3");
+const audio = new Audio("https://dl.dropboxusercontent.com/s/1cdwpm3gca9mlo0/kick.mp3");
 let time = 30;
 
 btn.onclick = e => {
