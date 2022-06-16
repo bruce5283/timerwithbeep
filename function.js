@@ -82,7 +82,7 @@ btn.onclick = e => {
 
 
 function countdown() {
-  document.getElementById("pre").innerHTML = --time;
+  document.getElementById("pre").innerHTML = --time + "s work time";
   if(time === 0) return onend();
   setTimeout(countdown, 1000);
 }
@@ -90,6 +90,7 @@ function countdown() {
 
 function onend() {
   audio.play(); // now we're safe to play it
+  document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   time = ${time};
   btn.disabled = false;
 }</script>
