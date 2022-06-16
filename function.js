@@ -50,7 +50,7 @@ color: #12A89E;
 <script>
 // Set the date we're counting down to
 const audio = new Audio("https://dl.dropboxusercontent.com/s/1cdwpm3gca9mlo0/kick.mp3");
-let time = 5;
+let time = 10;
 
 btn.onclick = e => {
   // mark our audio element as approved by the user
@@ -72,7 +72,7 @@ function countdown() {
 
 function onend() {
   audio.play(); // now we're safe to play it
-  time = 5;
+  time = 10;
   btn.disabled = false;
 }</script>
   </body>
