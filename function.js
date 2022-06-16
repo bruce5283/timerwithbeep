@@ -90,6 +90,7 @@ function countdown() {
 
 function onend() {
   audio.play(); // now we're safe to play it
+  document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   time = ${time};
   btn.disabled = false;
