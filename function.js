@@ -66,7 +66,7 @@ btn.onclick = e => {
 function countdown() {
   pre.textContent = --time;
   if(time === 0) return onend();
-    setTimeout(countdown, 1000);
+  setTimeout(countdown, 1000);
 }
 
 
@@ -74,8 +74,7 @@ function onend() {
   audio.play(); // now we're safe to play it
   time = 30;
   btn.disabled = false;
-}
-</script>
+}</script>
   </body>
 </html>`
 
