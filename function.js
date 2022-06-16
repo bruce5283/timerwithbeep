@@ -35,8 +35,6 @@ font-weight: ${fweight};
 text-align: ${align};
 font-family: verdana;
 font-size: ${fsize}px;
-width: ${width}vw;
-height: ${height}vh;
 }
 
 @media (prefers-color-scheme: dark) {
