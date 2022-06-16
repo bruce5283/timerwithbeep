@@ -66,8 +66,7 @@ btn.onclick = e => {
 function countdown() {
   pre.textContent = --time;
   if(time === 0) return onend();
-  pre.style.color ="#ff0000"
-  setTimeout(countdown, 1000);
+    setTimeout(countdown, 1000);
 }
 
 
