@@ -19,7 +19,7 @@ window.function = function (time, fweight, align, fsize, width, height) {
   </head>
   <body>
    <!-- Display the countdown timer in an element -->
-<p id="pre"></p>
+<pre id="pre"></pre>
 <button id="btn">Start Timer</button><br>
 <style>
 
