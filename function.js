@@ -23,6 +23,13 @@ window.function = function (time, fweight, align, fsize, width, height) {
 <button id="btn">Start Timer</button><br>
 <style>
 
+#btn {
+text-align: center;
+font-family: verdana;
+font-size: 15px;
+width: 50%;
+}
+
 #pre {
 font-weight: ${fweight};
 text-align: ${align};
