@@ -34,11 +34,12 @@ height: ${height}vh;
 #btn {
 text-align: center;
 font-family: verdana;
+color: white;
 font-size: 15px;
-width: 100px;
+width: 200px;
 background-color: #12A89E;
 padding: 10px 24px;
-border: #12A89E;
+border: none;
 border-radius: 8px;
 }
 
