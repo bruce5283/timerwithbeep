@@ -20,10 +20,10 @@ window.function = function (time, fweight, align, fsize, width, height) {
   <body>
    <!-- Display the countdown timer in an element -->
 <pre id="pre"></pre>
-<button id="btn">start countdown</button><br>
+<button id="btn">Start Timer</button><br>
 <style>
 
-#demo {
+#pre{
 font-weight: ${fweight};
 text-align: ${align};
 font-family: verdana;
@@ -34,14 +34,14 @@ height: ${height}vh;
 
 @media (prefers-color-scheme: dark) {
 
-#demo {
+#pre {
 color: #12A89E;
 }
 }
 
 @media (prefers-color-scheme: light) {
 
-#demo {
+#pre {
 color: #12A89E;
 }
 }
@@ -49,8 +49,8 @@ color: #12A89E;
 </style>
 <script>
 // Set the date we're counting down to
-const audio = new Audio("https://freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3");
-let time = 5;
+const audio = new Audio("http://sfxcontent.s3.amazonaws.com/soundfx/SmokeDetectorAlarm.mp3");
+let time = ${time};
 
 btn.onclick = e => {
   // mark our audio element as approved by the user
@@ -66,6 +66,7 @@ btn.onclick = e => {
 function countdown() {
   pre.textContent = --time;
   if(time === 0) return onend();
+  pre.style.color ="#ff0000"
   setTimeout(countdown, 1000);
 }
 
