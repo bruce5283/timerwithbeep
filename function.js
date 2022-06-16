@@ -23,7 +23,7 @@ window.function = function (time, fweight, align, fsize, width, height) {
 <button id="btn">Start Timer</button><br>
 <style>
 
-#demo {
+#pre {
 font-weight: ${fweight};
 text-align: ${align};
 font-family: verdana;
@@ -34,14 +34,14 @@ height: ${height}vh;
 
 @media (prefers-color-scheme: dark) {
 
-#demo {
+#pre {
 color: #12A89E;
 }
 }
 
 @media (prefers-color-scheme: light) {
 
-#demo {
+#pre {
 color: #12A89E;
 }
 }
