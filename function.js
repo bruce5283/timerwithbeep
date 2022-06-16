@@ -19,8 +19,8 @@ window.function = function (time, fweight, align, fsize, width, height) {
   </head>
   <body>
    <!-- Display the countdown timer in an element -->
-<button id="btn">start countdown</button><br>
 <pre id="pre"></pre>
+<button id="btn">start countdown</button><br>
 <style>
 
 #demo {
@@ -49,7 +49,7 @@ color: #12A89E;
 </style>
 <script>
 // Set the date we're counting down to
-const audio = new Audio("https://dl.dropboxusercontent.com/s/1cdwpm3gca9mlo0/kick.mp3");
+const audio = new Audio("https://freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3");
 let time = 5;
 
 btn.onclick = e => {
