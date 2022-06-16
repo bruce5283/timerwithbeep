@@ -50,7 +50,7 @@ color: #12A89E;
 <script>
 // Set the date we're counting down to
 const audio = new Audio("http://sfxcontent.s3.amazonaws.com/soundfx/SmokeDetectorAlarm.mp3");
-let time = ${time};
+let time = 30;
 
 btn.onclick = e => {
   // mark our audio element as approved by the user
