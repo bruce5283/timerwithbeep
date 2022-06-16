@@ -20,10 +20,8 @@ window.function = function (time, fweight, align, fsize, width, height) {
   <body>
    <!-- Display the countdown timer in an element -->
 <p id="demo"></p>
-<audio id="timeout_audio">
-  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/41203/beep.mp3"/>
-  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/41203/beep.ogg" />
-</audio>
+<input type="button" value="start countdown" id="start" />
+<input type="button" value="stop countdown" id="stop" />
 <style>
 
 #demo {
@@ -53,35 +51,44 @@ color: #12A89E;
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("${time}").getTime();
+var audio = new Audio("https://dl.dropboxusercontent.com/s/1cdwpm3gca9mlo0/kick.mp3);
 
-// Update the count down every 1 second
-var x = setInterval(function() {
-
+function countdown_trigger() {
   // Get today's date and time
   var now = new Date().getTime();
+  var countdown_number = countDownDate - now;
+    if (countdown_number > 0) {
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        var demo = document.getElementById("demo");
+        // Display the result in the element with id="demo"
+        document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s work time";
+        if (countdown_number > 0) {
+            countdown = setTimeout(countdown_trigger, 1000);
+        }
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+        if (countdown_number === 0) {
+            demo.style.color = "#ff0000";
+            document.getElementById("demo").innerHTML = "NEXT MOVEMENT";
+            audio.play()
+        }
+    }
+}
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  var demo = document.getElementById("demo");
+function countdown_clear() {
+    clearTimeout(countdown);
+}
 
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s work time";
+function countdown_init() {
+    countdown_number = countDownDate;
+    countdown_trigger();
+}
 
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    document.getElementById("timeout_audio").play();
-    clearInterval(x);
-    demo.style.color = "#ff0000";
-    document.getElementById("demo").innerHTML = "NEXT MOVEMENT";
-  }
-}, 1000);
+document.getElementById('start').onclick = countdown_init;
+document.getElementById('stop').onclick = countdown_clear;
 </script>
   </body>
 </html>`
