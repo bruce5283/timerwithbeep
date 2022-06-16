@@ -64,7 +64,7 @@ btn.onclick = e => {
 
 
 function countdown() {
-  pre.textContent = --time;
+  document.getElementById("pre").innerHTML = --time;
   if(time === 0) return onend();
   setTimeout(countdown, 1000);
 }
