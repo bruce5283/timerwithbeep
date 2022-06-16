@@ -50,7 +50,7 @@ color: #12A89E;
 <script>
 // Set the date we're counting down to
 const audio = new Audio("http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3");
-let time = 30;
+let time = 5;
 
 btn.onclick = e => {
   // mark our audio element as approved by the user
@@ -72,7 +72,7 @@ function countdown() {
 
 function onend() {
   audio.play(); // now we're safe to play it
-  time = 30;
+  time = 5;
   btn.disabled = false;
 }</script>
   </body>
