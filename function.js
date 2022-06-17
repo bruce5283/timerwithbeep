@@ -81,14 +81,14 @@ btn.onclick = e => {
 function countdown() {
   document.getElementById("pre").innerHTML = --time + "s work time";
   if(time === 0) return onend();
+  document.getElementById("pre").style.color ="#A81248";
+  document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   setTimeout(countdown, 1000);
 }
 
 
 function onend() {
   audio.play(); // now we're safe to play it
-  document.getElementById("pre").style.color ="#A81248";
-  document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   time = ${time};
   btn.disabled = false;
 }</script>
