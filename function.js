@@ -79,6 +79,7 @@ btn.onclick = e => {
 
 
 function countdown() {
+  document.getElementById("pre").style.color ="#12A89E";
   document.getElementById("pre").innerHTML = --time + "s work time";
   if(time === 0) return onend();
   setTimeout(countdown, 1000);
