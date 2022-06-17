@@ -72,7 +72,7 @@ let time = ${time};
 
 btn.onclick = e => {
   // mark our audio element as approved by the user
-  audio.play().then(() => { // pause directly
+  audio.load().then(() => { // pause directly
     audio.pause();
     audio.currentTime = 0;
   });
