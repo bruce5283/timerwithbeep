@@ -67,7 +67,7 @@ color: #12A89E;
 </style>
 <script>
 // Set the date we're counting down to
-const audio = new Audio("https://freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3");
+const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4385");
 let time = ${time};
 
 btn.onclick = e => {
