@@ -92,7 +92,7 @@ function playElement() {
   // Also, seems to have to be right before the play call for some reason
   // Does not make sense to me, I hope it's a quirk of the snippet environment
   mediaElement.addEventListener('play', () => {
-    const sourceElement = ctx.createMediaElementSource(mediaElement);
+    const sourceElement = ctx.createMediaElementSource(mediaElement);-
     sourceElement.connect(ctx.destination);
   });
   mediaElement.play();
@@ -101,9 +101,10 @@ function playElement() {
 function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
   document.getElementById("pre").innerHTML = --time + "s work time";
-  if(time <= 0){
+  if(time == 0){
       document.getElementById("pre").style.color ="#A81248";
       document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
+      return onend();
   }
   setTimeout(countdown, 1000);
 }
@@ -114,9 +115,6 @@ function playBuffer() {
 }
 
 function onend() {
-  document.getElementById("pre").style.color ="#A81248";
-  document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
-  time = ${time}
   btn.disabled = false;
 }
 
