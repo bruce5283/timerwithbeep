@@ -106,13 +106,15 @@ function countdown() {
 }
 
 function playBuffer() {
-  countdown();
   sourceBuffer.start();
+  sourceBuffer.suspend();
+  countdown();
 }
 
 function onend() {
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
+  sourceBuffer.resume();
   time = ${time}
   btn.disabled = false;
 }
