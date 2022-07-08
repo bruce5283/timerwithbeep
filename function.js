@@ -21,7 +21,7 @@ window.function = function (time, fweight, align, fsize, width, height) {
    <!-- Display the countdown timer in an element -->
 <div class = "container">
 <p id="pre"></p>
-<button id="btn" onclick="countdown()">Start Timer</button><br>
+<button id="btn" onclick="playBuffer()">Start Timer</button>
 </div>
 <audio controls id = "audio" src = "https://mdn.github.io/webaudio-examples/media-source-buffer/viper.mp3"
 <style>
@@ -99,7 +99,7 @@ function playElement() {
 }
 
 function playBuffer() {
-  sourceBuffer.start();
+  countdown();
 }
 
 function countdown() {
@@ -111,7 +111,7 @@ function countdown() {
 
 
 function onend() {
-  playBuffer();
+  sourceBuffer.start();
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   time = ${time}
