@@ -106,7 +106,6 @@ function countdown() {
 }
 
 function playBuffer() {
-  sourceBuffer.load();
   countdown();
 }
 
