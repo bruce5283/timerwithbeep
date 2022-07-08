@@ -107,14 +107,14 @@ function countdown() {
 
 function playBuffer() {
   sourceBuffer.start();
-  sourceBuffer.suspend();
+  sourceBuffer.stop();
   countdown();
 }
 
 function onend() {
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
-  sourceBuffer.resume();
+  sourceBuffer.start();
   time = ${time}
   btn.disabled = false;
 }
