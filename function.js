@@ -107,10 +107,10 @@ function countdown() {
 
 function playBuffer() {
   countdown();
+  sourceBuffer.start();
 }
 
 function onend() {
-  sourceBuffer.start();
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   time = ${time}
