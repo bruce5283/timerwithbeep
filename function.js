@@ -106,9 +106,7 @@ function countdown() {
 }
 
 function playBuffer() {
-  sourceBuffer.start();
-  sourceBuffer.stop();
-  sourceBuffer.start();
+  sourceBuffer.start(${time});
   countdown();
 }
 
