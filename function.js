@@ -109,19 +109,10 @@ function playBuffer() {
   sourceBuffer.start();
   sourceBuffer.stop();
   countdown();
+  sourceBuffer.start();
 }
 
 function onend() {
-  fetch(url)
-  .then(response => response.arrayBuffer())
-  .then(arrayBuffer => ctx.decodeAudioData(arrayBuffer))
-  .then(audioBuffer => {
-    sourceBuffer = ctx.createBufferSource();
-    sourceBuffer.buffer = audioBuffer;
-    sourceBuffer.connect(ctx.destination);
-    document.getElementById("btn").disabled = false;
-  });
-  sourceBuffer.start();
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   time = ${time}
