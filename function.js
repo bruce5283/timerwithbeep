@@ -23,7 +23,7 @@ window.function = function (time, fweight, align, fsize, width, height) {
 <p id="pre"></p>
 <button id="btn" onclick="playBuffer()">Start Timer</button>
 </div>
-<audio controls id = "audio" src = "https://mdn.github.io/webaudio-examples/media-source-buffer/viper.mp3"
+<audio controls id = "audio" src = "https://mdn.github.io/webaudio-examples/media-source-buffer/viper.mp3" />
 <style>
 
 .container {
@@ -99,24 +99,20 @@ function playElement() {
 }
 
 function playBuffer() {
-  countdown();
-}
-
-function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
   document.getElementById("pre").innerHTML = --time + "s work time";
-  if(time === 0) return onend();
-  setTimeout(countdown, 1000);
+  if(time === 0){
+      sourceBuffer.start();
+      document.getElementById("pre").style.color = "#A81248";
+      document.getElementById("pre).innterHTML = "NEXT MOVEMENT";
+      time = ${time};
+  }
+  setTimeout(countdown, 1000)
 }
 
 
-function onend() {
-  sourceBuffer.start();
-  document.getElementById("pre").style.color ="#A81248";
-  document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
-  time = ${time}
-  btn.disabled = false;
-}</script>
+
+</script>
   </body>
 </html>`
 
