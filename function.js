@@ -21,8 +21,9 @@ window.function = function (time, fweight, align, fsize, width, height) {
    <!-- Display the countdown timer in an element -->
 <div class = "container">
 <p id="pre"></p>
-<button id="btn">Start Timer</button><br>
+<button id="btn" onclick="countdown()">Start Timer</button><br>
 </div>
+<audio controls id = "audio" src = "https://mdn.github.io/webaudio-examples/media-source-buffer/viper.mp3"
 <style>
 
 .container {
@@ -67,16 +68,39 @@ color: #12A89E;
 </style>
 <script>
 // Set the date we're counting down to
-const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4385");
 let time = ${time};
 
-btn.onclick = e => {
-  // mark our audio element as approved by the user
-  audio.load();
-  countdown();
-  btn.disabled = true;
-};
+const mediaElement = document.getElementById("audio");
+const url = mediaElement.src;
+let sourceBuffer;
 
+
+const ctx = new AudioContext();
+
+fetch(url)
+  .then(response => response.arrayBuffer())
+  .then(arrayBuffer => ctx.decodeAudioData(arrayBuffer))
+  .then(audioBuffer => {
+    sourceBuffer = ctx.createBufferSource();
+    sourceBuffer.buffer = audioBuffer;
+    sourceBuffer.connect(ctx.destination);
+    document.getElementById("btn").disabled = false;
+  });
+
+function playElement() {
+  // To be honest, I have no idea, why this has to be in an event listener
+  // Also, seems to have to be right before the play call for some reason
+  // Does not make sense to me, I hope it's a quirk of the snippet environment
+  mediaElement.addEventListener('play', () => {
+    const sourceElement = ctx.createMediaElementSource(mediaElement);
+    sourceElement.connect(ctx.destination);
+  });
+  mediaElement.play();
+}
+
+function playBuffer() {
+  sourceBuffer.start();
+}
 
 function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
@@ -87,7 +111,7 @@ function countdown() {
 
 
 function onend() {
-  audio.play(); // now we're safe to play it
+  playBuffer();
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   time = ${time}
