@@ -98,17 +98,28 @@ function playElement() {
   mediaElement.play();
 }
 
-function playBuffer() {
+function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
   document.getElementById("pre").innerHTML = --time + "s work time";
-  if(time === 0){
-      sourceBuffer.start();
-      document.getElementById("pre").style.color = "#A81248";
-      document.getElementById("pre).innterHTML = "NEXT MOVEMENT";
-      time = ${time};
-  }
-  setTimeout(countdown, 1000)
+  if(time === 0) return onend();
+  setTimeout(countdown, 1000);
 }
+
+function playBuffer() {
+  sourceBuffer.load();
+  countdown();
+}
+
+function onend() {
+  sourceBuffer.start();
+  document.getElementById("pre").style.color ="#A81248";
+  document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
+  time = ${time}
+  btn.disabled = false;
+}
+
+
+
 
 
 
