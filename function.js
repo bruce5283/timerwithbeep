@@ -101,11 +101,7 @@ function playElement() {
 function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
   document.getElementById("pre").innerHTML = --time + "s work time";
-  if(time == 0){
-      document.getElementById("pre").style.color ="#A81248";
-      document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
-      return onend();
-  }
+  if(time == 0) return onend();
   setTimeout(countdown, 1000);
 }
 
@@ -115,6 +111,8 @@ function playBuffer() {
 }
 
 function onend() {
+  document.getElementById("pre").style.color ="#A81248";
+  document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   btn.disabled = false;
 }
 
