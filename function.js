@@ -96,6 +96,19 @@ function playElement() {
   mediaElement.play();
 }
 
+function buffer(){
+fetch(url)
+  .then(response => response.arrayBuffer())
+  .then(arrayBuffer => ctx.decodeAudioData(arrayBuffer))
+  .then(audioBuffer => {
+    sourceBuffer = ctx.createBufferSource();
+    sourceBuffer.buffer = audioBuffer;
+    sourceBuffer.connect(ctx.destination);
+    document.getElementById("btn").disabled = false;
+  });
+
+}
+
 function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
   document.getElementById("pre").innerHTML = --time + "s work time";
@@ -104,7 +117,8 @@ function countdown() {
 }
 
 function playBuffer() {
-  sourceBuffer.start();
+  buffer();
+  sourceBuffer.start($time);
   btn.disabled = true;
   countdown();
 }
