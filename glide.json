@@ -15,11 +15,6 @@
       "type": "number"
     },
     {
-      "name": "des",
-      "displayName": "Description",
-      "type": "string"
-    },
-    {
       "name": "align",
       "displayName": "Text align (default to center - accept left, right & justify)",
       "type": "string"
