@@ -33,6 +33,11 @@
       "name": "height",
       "displayName": "Height in percentage of the element compared to viewing port (default to 100)",
       "type": "number"
+    },
+    {
+        "name": "desc",
+        "displayName": "Description"
+        "type": "string"
     }
   ],
   "result": {
