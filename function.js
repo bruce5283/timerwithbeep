@@ -112,7 +112,7 @@ function playBuffer() {
 
 function onend() {
   document.getElementById("pre").style.color ="#A81248";
-  document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
+  document.getElementById("pre").innerHTML = --time + "s work time";
   let time = 0;
   btn.disabled = false;
 }
