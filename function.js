@@ -107,7 +107,7 @@ function countdown() {
 function playBuffer() {
   document.getElementById("pre").style.color ="#12A89E";
   document.getElementById("pre").innerHTML = --time + "s work time";
-  sourceBuffer.start($time);
+  sourceBuffer.start();
   btn.disabled = true;
   countdown();
 }
