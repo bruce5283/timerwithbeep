@@ -1,5 +1,5 @@
 // https://www.chartjs.org/
-window.function = function (time, des, fweight, align, fsize, width, height) {
+window.function = function (time, fweight, des, align, fsize, width, height) {
 
   // data
   time = time.value ?? "";
