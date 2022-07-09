@@ -114,7 +114,7 @@ function onend() {
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   btn.disabled = false;
-  time = 0;
+  time = ${time};
 }
 
 
