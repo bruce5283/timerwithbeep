@@ -1,3 +1,4 @@
+// https://www.chartjs.org/
 window.function = function (time, fweight, align, fsize, width, height) {
 
   // data
@@ -113,4 +114,12 @@ function onend() {
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   time = ${time}
   btn.disabled = false;
+}
+</script>
+  </body>
+</html>`
+
+  let enc = encodeURIComponent(ht);
+  let uri = `data:text/html;charset=utf-8,${enc}`
+  return uri; 
 }
