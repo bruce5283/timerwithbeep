@@ -113,7 +113,7 @@ function playBuffer() {
 function onend() {
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
-  time = 0;
+  let time = 0;
   btn.disabled = false;
 }
 
