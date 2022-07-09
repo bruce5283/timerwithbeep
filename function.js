@@ -101,7 +101,7 @@ function playElement() {
 function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
   document.getElementById("pre").innerHTML = --time + "s work time";
-  if(time === 0) return onend();
+  if(time < 0) return onend();
   setTimeout(countdown, 1000);
 }
 
@@ -114,7 +114,7 @@ function onend() {
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   btn.disabled = false;
-  let time = 0;
+  time = 0;
 }
 
 
