@@ -1,5 +1,5 @@
 // https://www.chartjs.org/
-window.function = function (time, fweight, align, fsize, width, height) {
+window.function = function (time, des, fweight, align, fsize, width, height) {
 
   // data
   time = time.value ?? "";
@@ -67,6 +67,7 @@ color: #12A89E;
 <script>
 // Set the date we're counting down to
 let time = ${time};
+let des = ${des};
 
 const mediaElement = document.getElementById("audio");
 const url = mediaElement.src;
@@ -105,9 +106,7 @@ function countdown() {
 }
 
 function playBuffer() {
-  document.getElementById("pre").style.color ="#12A89E";
-  document.getElementById("pre").innerHTML = --time + "s work time";
-  sourceBuffer.start();
+  sourceBuffer.start(${time});
   btn.disabled = true;
   countdown();
 }
