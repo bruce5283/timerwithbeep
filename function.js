@@ -104,7 +104,7 @@ function countdown() {
 }
 
 function playBuffer() {
-  sourceBuffer.start(${time});
+  sourceBuffer.start();
   btn.disabled = true;
   countdown();
 }
