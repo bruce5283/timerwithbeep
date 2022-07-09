@@ -96,18 +96,6 @@ function playElement() {
   mediaElement.play();
 }
 
-function buffer(){
-fetch(url)
-  .then(response => response.arrayBuffer())
-  .then(arrayBuffer => ctx.decodeAudioData(arrayBuffer))
-  .then(audioBuffer => {
-    sourceBuffer = ctx.createBufferSource();
-    sourceBuffer.buffer = audioBuffer;
-    sourceBuffer.connect(ctx.destination);
-    document.getElementById("btn").disabled = false;
-  });
-
-}
 
 function countdown() {
   document.getElementById("pre").style.color ="#12A89E";
@@ -117,7 +105,8 @@ function countdown() {
 }
 
 function playBuffer() {
-  buffer();
+  document.getElementById("pre").style.color ="#12A89E";
+  document.getElementById("pre").innerHTML = --time + "s work time";
   sourceBuffer.start($time);
   btn.disabled = true;
   countdown();
@@ -127,6 +116,7 @@ function onend() {
   document.getElementById("pre").style.color ="#A81248";
   document.getElementById("pre").innerHTML = "NEXT MOVEMENT";
   btn.disabled = false;
+  time = ${time};
 }
 </script>
   </body>
