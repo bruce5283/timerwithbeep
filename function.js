@@ -1,5 +1,5 @@
 // https://www.chartjs.org/
-window.function = function (time, fweight, align, fsize, width, height, desc) {
+window.function = function (time, fweight, align, fsize, width, height, seq) {
 
   // data
   time = time.value ?? "";
@@ -8,6 +8,7 @@ window.function = function (time, fweight, align, fsize, width, height, desc) {
   fsize = fsize.value ?? "20";
   width = width.value ?? "100";
   height = height.value ?? "100";
+  seq = seq.value ?? "";
 
   let ht = `<!DOCTYPE html>
 <html>
@@ -67,7 +68,7 @@ color: #12A89E;
 <script>
 // Set the date we're counting down to
 let time = ${time};
-let desc = ${desc};
+let seq = ${seq};
 
 const mediaElement = document.getElementById("audio");
 const url = mediaElement.src;

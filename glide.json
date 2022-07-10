@@ -35,9 +35,9 @@
       "type": "number"
     },
     {
-        "name": "desc",
-        "displayName": "Description"
-        "type": "string"
+        "name": "seq",
+        "displayName": "Sequence"
+        "type": "number"
     }
   ],
   "result": {
