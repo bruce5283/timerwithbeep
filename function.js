@@ -8,7 +8,7 @@ window.function = function (time, fweight, align, fsize, width, height, seq) {
   fsize = fsize.value ?? "20";
   width = width.value ?? "100";
   height = height.value ?? "100";
-  seq = seq.value ?? "";
+  seq = seq.value ?? "0";
 
   let ht = `<!DOCTYPE html>
 <html>
